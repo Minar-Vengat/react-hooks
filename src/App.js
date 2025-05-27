@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Color from './Components/ColorChanger'
 import LikeButton from './Components/LikeButton';
 import Clock from './Components/DigitalClock'
+import RegistrationForm  from './Components/Registration'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/color' element={<Color/>}/>
       <Route path='/like' element={<LikeButton/>}/>
       <Route path='/clock' element={<Clock/>}/>
+      <Route path='/RForm'  element={<RegistrationForm/>}/>
     </Routes>
     </BrowserRouter>
   );
