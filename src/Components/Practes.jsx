@@ -15,8 +15,6 @@ const Practes = () => {
     <button onClick={() => setCount(count - 1)} >decres</button>
     <button onClick={() => setCount(0)}>reset</button>
      <hr />
-
-
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h2>Toggle Text</h2>
     <button onClick={()=> setShow(! show)} >{show ? 'hide' : 'show'} Message </button>
@@ -34,5 +32,4 @@ const Practes = () => {
     </>
   )
 }
-
 export default Practes

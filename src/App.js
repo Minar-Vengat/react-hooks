@@ -6,7 +6,6 @@ import Color from './Components/ColorChanger'
 import LikeButton from './Components/LikeButton';
 import Clock from './Components/DigitalClock'
 import RegistrationForm  from './Components/Registration'
-
 function App() {
   return (
     <BrowserRouter>
@@ -21,5 +20,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

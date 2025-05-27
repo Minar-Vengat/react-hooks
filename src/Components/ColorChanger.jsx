@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-
 const ColorChanger = () => {
   const [bgColor, setBgColor] = useState('lightgray');
-
   const getRandomColor = () => {
     const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'teal'];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
-
   const handleChangeColor = () => {
     const newColor = getRandomColor();
     setBgColor(newColor);
   };
-
   return (
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h2>ColorChanger Box</h2>
@@ -34,5 +30,4 @@ const ColorChanger = () => {
     </div>
   );
 };
-
 export default ColorChanger;
