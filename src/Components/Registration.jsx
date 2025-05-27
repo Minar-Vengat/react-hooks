@@ -3,7 +3,6 @@ const initialState = {
   users: [],
   editingUser: null,
 };
-
 function reducer(state, action) {
   switch (action.type) {
     case 'ADD_USER':
@@ -33,61 +32,43 @@ function reducer(state, action) {
       return state;
   }
 }
-
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     age: '',
   });
-
-  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  
-  const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!formData.name || !formData.email || !formData.age) {
       alert('Please fill all fields');
       return;
     }
-
-    if (state.editingUser) {
-      
+    if (state.editingUser) {  
       dispatch({
         type: 'UPDATE_USER',
         payload: { ...formData, id: state.editingUser.id },
       });
     } else {
-      
       dispatch({ type: 'ADD_USER', payload: formData });
-    }
-
-    
+    }    
     setFormData({ name: '', email: '', age: '' });
   };
-
-  
   const handleEdit = (user) => {
     dispatch({ type: 'SET_EDIT_USER', payload: user });
     setFormData({ name: user.name, email: user.email, age: user.age });
   };
-
-  
   const handleDelete = (id) => {
     dispatch({ type: 'DELETE_USER', payload: id });
   };
-
   return (
     <center>
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
       <h2>Advanced Registration using <code>useReducer</code></h2>
-
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <input
           type="text"
@@ -115,7 +96,6 @@ const App = () => {
         <br /><br />
         <button type="submit">{state.editingUser ? 'Update' : 'Submit'}</button>
       </form>
-
       <h3>Show Details</h3>
       {state.users.length === 0 ? (
         <p>No users registered.</p>
@@ -148,5 +128,4 @@ const App = () => {
     </center>
   );
 };
-
 export default App;
