@@ -6,6 +6,7 @@ import Color from './Components/ColorChanger'
 import LikeButton from './Components/LikeButton';
 import Clock from './Components/DigitalClock'
 import RegistrationForm  from './Components/Registration'
+import ActivityChart from './Components/ActivityChart';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
       <Route path='/like' element={<LikeButton/>}/>
       <Route path='/clock' element={<Clock/>}/>
       <Route path='/RForm'  element={<RegistrationForm/>}/>
+      <Route path='/Act'  element={<ActivityChart/>}/>
     </Routes>
     </BrowserRouter>
   );
